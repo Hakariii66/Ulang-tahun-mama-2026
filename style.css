@@ -1,0 +1,255 @@
+/* Reset dan gaya dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #c1f0ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Kontainer utama */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animasi container */
+.animate-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Kue animasi */
+.animate-cake {
+    font-size: 120px;
+    color: #ff6b9d;
+    margin: 30px 0;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+/* Teks animasi */
+.animate-text {
+    text-align: center;
+    margin: 20px 0;
+    z-index: 2;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.Happy span {
+    font-size: 70px;
+    color: #ff4081;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+.Birthday span {
+    font-size: 70px;
+    color: #2196F3;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+/* Container ucapan */
+.greetings-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    animation: slideUp 1s ease-out;
+}
+
+.greetings-text p {
+    margin: 20px 0;
+    line-height: 1.8;
+    font-size: 22px;
+    color: #333;
+}
+
+.greetings-text p:first-child {
+    font-size: 32px;
+    color: #ff4081;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+/* Background elemen dekoratif */
+.decorative-element {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    color: #ff6b9d;
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.star {
+    color: #ffcc00;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+/* Tombol musik */
+.music-control {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b9d, #ff4081);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    color: white;
+    font-size: 32px;
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.6);
+    background: linear-gradient(135deg, #ff4081, #ff0066);
+}
+
+.music-control.playing {
+    animation: musicPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4), 0 0 0 0 rgba(255, 107, 157, 0.7);
+    }
+    50% {
+        box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4), 0 0 0 10px rgba(255, 107, 157, 0);
+    }
+}
+
+/* Animasi */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .animate-cake {
+        font-size: 80px;
+    }
+    
+    .Happy span, .Birthday span {
+        font-size: 50px;
+    }
+    
+    .greetings-text p {
+        font-size: 18px;
+    }
+    
+    .greetings-text p:first-child {
+        font-size: 26px;
+    }
+    
+    h1 {
+        gap: 5px;
+    }
+    
+    .music-control {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-cake {
+        font-size: 60px;
+    }
+    
+    .Happy span, .Birthday span {
+        font-size: 35px;
+    }
+    
+    .greetings-text p {
+        font-size: 16px;
+    }
+    
+    .greetings-text p:first-child {
+        font-size: 22px;
+    }
+    
+    .greetings-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
